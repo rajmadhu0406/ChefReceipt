@@ -1,0 +1,37 @@
+
+{
+  "manifest_version": 2,
+  "name": "ChefAteYourDish",
+  "version": "1",
+  "description": "Codechef submission alert",
+  "icons": {
+      "16": "./images/cwarning16.png",
+      "64": "./images/cwarning64.png",
+      "128": "./images/cwarning128.png"
+  },
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "<all_urls>",
+    "notifications",
+    "webNavigation",
+    "storage"
+  ],
+ 
+  "content_scripts": [{
+      "matches":["<all_urls>"],
+      "js": ["content.js"]
+  }],
+
+  "browser_action":{
+      
+      "default_icon": "./images/cwarning128.png"
+  },
+
+  "background":{
+      "scripts": ["background.js"]
+  }
+
+}
